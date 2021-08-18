@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from "react";
+import Card from "./components/Card";
+// import data from "./data.json";
+
 
 function App() {
+const [itemList, setItemList] = useState([]);
+
+useEffect(()=> {
+  fetch('https://breakingbadapi.com/api/characters')
+  .then(response => response.json())
+  .then((data) => setItemList(data));
+},[])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="header">
+        <img
+          src="https://www.logolynx.com/images/logolynx/55/55a537ca9549600cf7d1d0b274b3bc61.png"
+          alt="Breaking Bad Logo"
+        />
       </header>
+      <div className="cards">
+        {itemList.map((item) => (
+          <Card key={item.char_id} item={item} />
+        ))}
+      </div>
     </div>
   );
 }
-
 export default App;
