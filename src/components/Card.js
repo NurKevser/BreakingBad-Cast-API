@@ -1,4 +1,60 @@
 import React from "react";
+
+const Card = ({cast}) => {
+
+  return (
+    <div className='card'>
+      <img src={cast.img} alt="img" />
+      <div className='card-info'>
+        <h1>{cast.name}</h1>
+        <h3>{cast.nickname}</h3>
+        <p>{cast.birthday}</p>
+        <p>{cast.status}</p>
+      </div>
+    </div>
+  );
+};
+
+export default Card;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* import React from "react";
 const Card = ({ item }) => {
   // {
   //     "char_id": 114,
@@ -32,4 +88,4 @@ const Card = ({ item }) => {
     </div>
   );
 };
-export default Card;
+export default Card; */
