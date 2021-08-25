@@ -26,7 +26,7 @@ axios.get('https://breakingbadapi.com/api/characters').then((res) => setItemList
       
       <div className='cards'>
         {itemList.map((cast) => (
-          <Card key={cast.char_id} cast={cast} />
+          <Card key={cast.name} cast={cast} />
         ))}
       </div>
     </div>
